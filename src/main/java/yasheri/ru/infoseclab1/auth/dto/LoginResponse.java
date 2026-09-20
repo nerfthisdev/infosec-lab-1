@@ -1,3 +1,3 @@
-package yasheri.ru.infoseclab1.auth;
+package yasheri.ru.infoseclab1.auth.dto;
 
 public record LoginResponse(String token) {}
