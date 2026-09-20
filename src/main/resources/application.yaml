@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: infosec-lab-1
