@@ -1,3 +1,7 @@
 spring:
   application:
     name: infosec-lab-1
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
