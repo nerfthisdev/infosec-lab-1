@@ -8,7 +8,7 @@ import yasheri.ru.infoseclab1.auth.dto.LoginRequest;
 import yasheri.ru.infoseclab1.auth.dto.LoginResponse;
 
 @RestController
-@RequestMapping("/auth/login")
+@RequestMapping("/auth")
 class AuthController {
 
     private final AuthService authService;
@@ -17,12 +17,13 @@ class AuthController {
         this.authService = authService;
     }
 
+    @RequestMapping("/login")
     @PostMapping
     public LoginResponse login(@RequestBody LoginRequest request) {
         return authService.login(request);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public LoginResponse register(@RequestBody LoginRequest request) {
         return new LoginResponse("mock");
     }
