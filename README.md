@@ -25,7 +25,8 @@ export JWT_SECRET="$(openssl rand -base64 32)"
     --pretty \
     --variable host=localhost:8080 \
     --variable username="hurl-user-$(date +%s)" \
-    e2e/api.hurl```
+    e2e/api.hurl
+```
 
 Сценарий проверяет отказ без JWT, регистрацию, вход, создание и чтение данных.
 Для полного удаления локальной базы данных используйте `docker compose down -v`.
