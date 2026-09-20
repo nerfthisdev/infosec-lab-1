@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes><![CDATA[
+            CVE-2018-1258 applies to Spring Framework 5.0.5.RELEASE.
+            This project uses Spring Framework 7.0.9, so this is a CPE false positive
+            reported for the Spring Security artifacts.
+            Reviewed against the official Spring advisory:
+            https://spring.io/security/cve-2018-1258/
+        ]]></notes>
+        <filePath regex="true">.*spring-security-(core|oauth2-resource-server)-.*\.jar</filePath>
+        <cve>CVE-2018-1258</cve>
+    </suppress>
+</suppressions>
