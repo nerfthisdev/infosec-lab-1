@@ -20,8 +20,7 @@ class AuthController {
         this.authService = authService;
     }
 
-    @RequestMapping("/login")
-    @PostMapping
+    @PostMapping("/login")
     public LoginResponse login(@Valid @RequestBody LoginRequest request) {
         return authService.login(request);
     }

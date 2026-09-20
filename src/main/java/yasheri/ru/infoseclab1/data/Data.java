@@ -8,8 +8,23 @@ public class Data {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    @Column(length = 50, nullable = false)
-    String something;
+    @Column(length = 1000, nullable = false)
+    private String text;
+
+    protected Data() {
+    }
+
+    public Data(String text) {
+        this.text = text;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
 }

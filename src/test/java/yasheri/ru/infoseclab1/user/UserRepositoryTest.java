@@ -3,21 +3,14 @@ package yasheri.ru.infoseclab1.user;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
+import org.springframework.context.annotation.Import;
+import yasheri.ru.infoseclab1.TestcontainersConfiguration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Testcontainers
-@SpringBootTest(properties = "spring.jpa.hibernate.ddl-auto=create-drop")
+@SpringBootTest
+@Import(TestcontainersConfiguration.class)
 class UserRepositoryTest {
-
-    @Container
-    @ServiceConnection
-    static final PostgreSQLContainer postgres =
-            new PostgreSQLContainer("postgres:17-alpine");
 
     @Autowired
     private UserRepository userRepository;
