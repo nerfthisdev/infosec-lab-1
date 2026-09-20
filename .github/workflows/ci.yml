@@ -24,6 +24,14 @@ jobs:
       - name: Test, build and run SpotBugs
         run: ./mvnw --batch-mode clean verify
 
+      - name: Upload SpotBugs report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: spotbugs-report
+          path: target/spotbugsXml.xml
+          if-no-files-found: warn
+
       - name: Upload application package
         uses: actions/upload-artifact@v6
         with:

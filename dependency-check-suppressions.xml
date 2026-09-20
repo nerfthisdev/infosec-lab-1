@@ -8,7 +8,7 @@
             Reviewed against the official Spring advisory:
             https://spring.io/security/cve-2018-1258/
         ]]></notes>
-        <filePath regex="true">.*spring-security-(core|oauth2-resource-server)-.*\.jar</filePath>
+        <filePath regex="true">.*spring-security-.*\.jar</filePath>
         <cve>CVE-2018-1258</cve>
     </suppress>
 </suppressions>
