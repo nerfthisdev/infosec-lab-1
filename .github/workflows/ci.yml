@@ -29,7 +29,9 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: spotbugs-report
-          path: target/spotbugsXml.xml
+          path: |
+            target/spotbugsXml.xml
+            target/reports/spotbugs.html
           if-no-files-found: error
 
       - name: Upload application package

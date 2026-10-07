@@ -137,6 +137,7 @@
                     <effort>Max</effort>
                     <threshold>Medium</threshold>
                     <xmlOutput>true</xmlOutput>
+                    <htmlOutput>true</htmlOutput>
                 </configuration>
                 <executions>
                     <execution>
