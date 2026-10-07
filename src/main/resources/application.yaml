@@ -1,6 +1,14 @@
 spring:
   application:
     name: infosec-lab-1
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/infosec}
+    username: ${DB_USERNAME:infosec}
+    password: ${DB_PASSWORD:infosec}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
 
 security:
   jwt:
