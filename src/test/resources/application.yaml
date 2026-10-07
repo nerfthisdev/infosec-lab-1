@@ -2,6 +2,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+    # Avoid keeping a persistence context open while an HTTP response is rendered.
+    open-in-view: false
 
 security:
   jwt:

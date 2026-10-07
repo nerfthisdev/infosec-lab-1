@@ -94,7 +94,8 @@ class ApiIntegrationTest {
                         .content("""
                                 {"username":"?","password":"short"}
                                 """))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Validation failed"));
 
         register("alice", "correct-password")
                 .andExpect(status().isOk());
@@ -129,7 +130,8 @@ class ApiIntegrationTest {
                         .header("Authorization", "Bearer " + token)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"text\":\"   \"}"))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Validation failed"));
     }
 
     @Test
